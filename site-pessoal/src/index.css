@@ -1,0 +1,97 @@
+/* Importação das Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,900&display=swap');
+
+:root {
+  --cor-fundo: #f4e6db;
+  --cor-cabecalho: #ffffff;
+  --cor-fonte: #1E222A;
+  --cor-fonte2: #7A1C3E;
+  --cor-botao: #7A1C3E;
+  --cor-borda-badge: #F4A261;
+  --cor-tags-projetos: #21547a;
+
+  --fonte-principal: 'Inter', sans-serif;
+  --fonte-serif: 'Playfair Display', Georgia, serif;
+}
+
+/* Container Principal */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: var(--fonte-principal);
+}
+
+/* Tag CIn-UFPE superior */
+.badge-subtitulo {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cor-fonte2);
+  margin-bottom: 20px;
+  display: inline-block;
+  border-bottom: 1px solid var(--cor-borda-badge);
+  padding-bottom: 2px;
+}
+
+/* Disposição da Foto + Conteúdo */
+.perfil-topo {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* Foto de Perfil */
+.foto-perfil {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--cor-borda-badge);
+}
+
+/* Título com o sobrenome na fonte Playfair Display */
+.titulo-hero {
+  font-family: var(--fonte-principal);
+  font-weight: 800;
+  font-size: 40px;
+  color: var(--cor-fonte);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.destaque-serif {
+  font-family: var(--fonte-serif);
+  font-style: italic;
+  font-weight: 900;
+  color: var(--cor-fonte2);
+}
+
+/* Descrição com tom elegante */
+.descricao-hero {
+  font-family: var(--fonte-serif);
+  font-size: 19px;
+  color: var(--cor-fonte);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+/* Lista de Badges */
+.badge-lista {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.badge {
+  background-color: transparent;
+  color: var(--cor-fonte2);
+  border: 1px solid var(--cor-borda-badge);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
