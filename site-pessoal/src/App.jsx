@@ -1,122 +1,65 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import Home from './pages/Home';
+import Sobre from './pages/Sobre';
+import Portfolio from './pages/Portfolio';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [paginaAtual, setPaginaAtual] = useState('home');
 
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+      {/* O Header fica fora de qualquer container para ocupar 100% da largura da tela */}
+      <header>
+        <nav>
+          <button 
+            className={`btn-transparente ${paginaAtual === 'home' ? 'active' : ''}`} 
+            onClick={() => setPaginaAtual('home')}
+          >
+            Início
+          </button>
+          <button 
+            className={`btn-transparente ${paginaAtual === 'sobre' ? 'active' : ''}`} 
+            onClick={() => setPaginaAtual('sobre')}
+          >
+            Sobre
+          </button>
+          <button 
+            className={`btn-transparente ${paginaAtual === 'portfolio' ? 'active' : ''}`} 
+            onClick={() => setPaginaAtual('portfolio')}
+          >
+            Portfólio
+          </button>
+        </nav>
+      </header>
 
-      <div className="ticks"></div>
+      {/* Apenas o conteúdo principal fica dentro do container centralizado */}
+      <main className="container">
+        {paginaAtual === 'home' && <Home setPaginaAtual={setPaginaAtual} />}
+        {paginaAtual === 'sobre' && <Sobre />}
+        {paginaAtual === 'portfolio' && <Portfolio />}
+      </main>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+      {/* O Footer também fica dentro do seu próprio container ou fora */}
+      <footer className="container">
+        <h3>Formas de contato:</h3>
+        <p><strong>Email institucional:</strong> mlpp@cin.ufpe.br</p>
+        <p><strong>Email pessoal:</strong> marial.portela10@gmail.com</p>
+        <p>
+          <strong>LinkedIn:</strong>{' '}
+          <a href="https://www.linkedin.com/in/maria-luiza-portela" target="_blank" rel="noopener noreferrer">
+            www.linkedin.com/in/maria-luiza-portela
+          </a>
+        </p>
+        <p>
+          <strong>Github:</strong>{' '}
+          <a href="https://github.com/marialportela10" target="_blank" rel="noopener noreferrer">
+            github.com/marialportela10
+          </a>
+        </p>
+      </footer>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

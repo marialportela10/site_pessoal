@@ -44,42 +44,42 @@ function Carrossel({ imagens }) {
 
 export default function Portfolio({ setPaginaAtual, alternarTema }) {
 const imagensmapeia = [
-'/~mlpp/imagens/mapeia/pagina1.jpg',
-'/~mlpp/imagens/mapeia/pagina2.jpg',
-'/~mlpp/imagens/mapeia/pagina3.jpg',
-'/~mlpp/imagens/mapeia/pagina4.jpg',
-'/~mlpp/imagens/mapeia/pagina5.jpg',
-'/~mlpp/imagens/mapeia/pagina6.jpg',
-'/~mlpp/imagens/mapeia/pagina7.jpg',
-'/~mlpp/imagens/mapeia/pagina8.jpg'
+'/~mlpp/mapeia/pagina1.jpg',
+'/~mlpp/mapeia/pagina2.jpg',
+'/~mlpp/mapeia/pagina3.jpg',
+'/~mlpp/mapeia/pagina4.jpg',
+'/~mlpp/mapeia/pagina5.jpg',
+'/~mlpp/mapeia/pagina6.jpg',
+'/~mlpp/mapeia/pagina7.jpg',
+'/~mlpp/mapeia/pagina8.jpg'
 ];
 
 const imagensouroecachaca = [
-'/~mlpp/imagens/ouroecachaca/pagina1.jpg',
-'/~mlpp/imagens/ouroecachaca/pagina2.jpg',
-'/~mlpp/imagens/ouroecachaca/pagina3.jpg',
-'/~mlpp/imagens/ouroecachaca/pagina4.jpg',
-'/~mlpp/imagens/ouroecachaca/pagina5.jpg',
-'/~mlpp/imagens/ouroecachaca/pagina6.jpg',
-'/~mlpp/imagens/ouroecachaca/pagina7.jpg',
-'/~mlpp/imagens/ouroecachaca/pagina8.jpg',
-'/~mlpp/imagens/ouroecachaca/pagina9.jpg',
-'/~mlpp/imagens/ouroecachaca/pagina10.jpg',
-'/~mlpp/imagens/ouroecachaca/pagina11.jpg',
-'/~mlpp/imagens/ouroecachaca/pagina12.jpg'
+'/~mlpp/ouroecachaca/pagina1.jpg',
+'/~mlpp/ouroecachaca/pagina2.jpg',
+'/~mlpp/ouroecachaca/pagina3.jpg',
+'/~mlpp/ouroecachaca/pagina4.jpg',
+'/~mlpp/ouroecachaca/pagina5.jpg',
+'/~mlpp/ouroecachaca/pagina6.jpg',
+'/~mlpp/ouroecachaca/pagina7.jpg',
+'/~mlpp/ouroecachaca/pagina8.jpg',
+'/~mlpp/ouroecachaca/pagina9.jpg',
+'/~mlpp/ouroecachaca/pagina10.jpg',
+'/~mlpp/ouroecachaca/pagina11.jpg',
+'/~mlpp/ouroecachaca/pagina12.jpg'
 ];
 
 const imagensthebunker = [
-'/~mlpp/imagens/the-bunker/pagina (1).jpg',
-'/~mlpp/imagens/the-bunker/pagina (2).jpg',
-'/~mlpp/imagens/the-bunker/pagina (3).jpg',
-'/~mlpp/imagens/the-bunker/pagina (4).jpg',
-'/~mlpp/imagens/the-bunker/pagina (5).jpg',
-'/~mlpp/imagens/the-bunker/pagina (6).jpg',
-'/~mlpp/imagens/the-bunker/pagina (7).jpg',
-'/~mlpp/imagens/the-bunker/pagina (8).jpg',
-'/~mlpp/imagens/the-bunker/pagina (9).jpg',
-'/~mlpp/imagens/the-bunker/pagina (10).jpg'
+'/~mlpp/the-bunker/pagina (1).jpg',
+'/~mlpp/the-bunker/pagina (2).jpg',
+'/~mlpp/the-bunker/pagina (3).jpg',
+'/~mlpp/the-bunker/pagina (4).jpg',
+'/~mlpp/the-bunker/pagina (5).jpg',
+'/~mlpp/the-bunker/pagina (6).jpg',
+'/~mlpp/the-bunker/pagina (7).jpg',
+'/~mlpp/the-bunker/pagina (8).jpg',
+'/~mlpp/the-bunker/pagina (9).jpg',
+'/~mlpp/the-bunker/pagina (10).jpg'
 ];
 
 return (

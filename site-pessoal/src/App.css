@@ -44,11 +44,9 @@
 
 /* Foto de Perfil */
 .foto-perfil {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
+  width: 300px;
+  height: auto;
   object-fit: cover;
-  border: 3px solid var(--cor-borda-badge);
 }
 
 /* Título com o sobrenome na fonte Playfair Display */
@@ -94,4 +92,59 @@
   font-weight: 600;
   padding: 4px 12px;
   border-radius: 20px;
+}
+
+/* ==========================================
+   RESET GLOBAL E FUNDO DA PÁGINA
+   ========================================== */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--cor-fundo);
+  color: var(--cor-fonte);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Cabeçalho ocupando 100% da largura no topo */
+header {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: var(--cor-cabecalho); /* Fundo #ffffff */
+  padding: 16px 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-transparente {
+  background: transparent;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--cor-fonte);
+  cursor: pointer;
+  padding: 6px 12px;
+  transition: color 0.2s ease;
+}
+
+.btn-transparente:hover,
+.btn-transparente.active {
+  color: var(--cor-fonte2);
+}
+
+/* Container que limita a largura apenas do conteúdo abaixo do cabeçalho */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
