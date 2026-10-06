@@ -83,6 +83,16 @@ const imagensthebunker = [
 './the-bunker/pagina (10).jpg'
 ];
 
+const imagensantro = [
+'./Antro/1.png',
+'./Antro/2.png',
+'./Antro/3.png',
+'./Antro/4.png',
+'./Antro/5.png',
+'./Antro/6.png',
+'./Antro/7.png'
+];
+
 return (
     <>
 
@@ -145,6 +155,22 @@ return (
                     </a>
                 </p>
                 </article>
+
+                <article>
+                <div className="project-heading"><span className="project-number">04</span><div><p className="eyebrow">C++ / ORIENTAÇÃO A OBJETOS / AGROECOLOGIA</p><h2>Antro</h2></div><span aria-hidden="true">→</span></div>
+                <Carrossel imagens={imagensantro} titulo="Antro" />
+                <p>
+                    Sistema de gestão de encomendas para feiras agroecológicas, pensado para apoiar agricultores familiares na organização de pedidos antecipados e retirada na feira. A proposta substitui processos manuais dispersos em aplicativos de mensagens por um fluxo organizado de catálogo, reserva de produtos, separação e acompanhamento dos pedidos.
+O projeto utiliza C++ e estruturas de dados da STL para modelar produtos, consumidores e pedidos. Entre os recursos previstos estão o processamento por ordem de chegada, o ajuste do valor conforme a pesagem real e a geração de uma lista consolidada para orientar a colheita.
+                </p>
+                <p>
+                    <strong>GitHub:</strong>{' '}
+                    <a href="https://github.com/joaobgdev/Antro" target="_blank" rel="noopener noreferrer">
+                    https://github.com/joaobgdev/Antro
+                    </a>
+                </p>
+                </article>
+
             </div>
         </div>
     </>
