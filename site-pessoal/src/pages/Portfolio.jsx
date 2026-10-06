@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Carrossel({ imagens }) {
+function Carrossel({ imagens, titulo }) {
     const [indiceAtual, setIndiceAtual] = useState(0);
 
     const anterior = () => {
@@ -12,7 +12,7 @@ function Carrossel({ imagens }) {
     };
 
     return (
-        <div className="carrossel">
+        <div className="carrossel" role="region" aria-label={`Galeria de ${titulo}`} onKeyDown={event => { if (event.key === 'ArrowLeft') anterior(); if (event.key === 'ArrowRight') proximo(); }}>
             <button 
             type="button" 
             className="btn-carrossel prev" 
@@ -25,7 +25,7 @@ function Carrossel({ imagens }) {
             <div className="carrossel-container">
             <img
             src={imagens[indiceAtual]}
-                alt={`Slide ${indiceAtual + 1}`}
+                alt={`${titulo} — imagem ${indiceAtual + 1} de ${imagens.length}`}
                 className="slide active"
             />
             </div>
@@ -38,58 +38,59 @@ function Carrossel({ imagens }) {
             >
             &#10095;
             </button>
+            <div className="carousel-progress"><span aria-live="polite">{String(indiceAtual + 1).padStart(2, '0')} / {String(imagens.length).padStart(2, '0')}</span><div className="carousel-dots">{imagens.map((imagem, index) => <button key={imagem} type="button" aria-label={`Ver imagem ${index + 1} de ${titulo}`} aria-pressed={index === indiceAtual} onClick={() => setIndiceAtual(index)} />)}</div><span>USE AS SETAS ← →</span></div>
         </div>
     );
 }
 
-export default function Portfolio({ setPaginaAtual, alternarTema }) {
+export default function Portfolio() {
 const imagensmapeia = [
-'/~mlpp/mapeia/pagina1.jpg',
-'/~mlpp/mapeia/pagina2.jpg',
-'/~mlpp/mapeia/pagina3.jpg',
-'/~mlpp/mapeia/pagina4.jpg',
-'/~mlpp/mapeia/pagina5.jpg',
-'/~mlpp/mapeia/pagina6.jpg',
-'/~mlpp/mapeia/pagina7.jpg',
-'/~mlpp/mapeia/pagina8.jpg'
+'./mapeia/pagina1.jpg',
+'./mapeia/pagina2.jpg',
+'./mapeia/pagina3.jpg',
+'./mapeia/pagina4.jpg',
+'./mapeia/pagina5.jpg',
+'./mapeia/pagina6.jpg',
+'./mapeia/pagina7.jpg',
+'./mapeia/pagina8.jpg'
 ];
 
 const imagensouroecachaca = [
-'/~mlpp/ouroecachaca/pagina1.jpg',
-'/~mlpp/ouroecachaca/pagina2.jpg',
-'/~mlpp/ouroecachaca/pagina3.jpg',
-'/~mlpp/ouroecachaca/pagina4.jpg',
-'/~mlpp/ouroecachaca/pagina5.jpg',
-'/~mlpp/ouroecachaca/pagina6.jpg',
-'/~mlpp/ouroecachaca/pagina7.jpg',
-'/~mlpp/ouroecachaca/pagina8.jpg',
-'/~mlpp/ouroecachaca/pagina9.jpg',
-'/~mlpp/ouroecachaca/pagina10.jpg',
-'/~mlpp/ouroecachaca/pagina11.jpg',
-'/~mlpp/ouroecachaca/pagina12.jpg'
+'./ouroecachaca/pagina1.jpg',
+'./ouroecachaca/pagina2.jpg',
+'./ouroecachaca/pagina3.jpg',
+'./ouroecachaca/pagina4.jpg',
+'./ouroecachaca/pagina5.jpg',
+'./ouroecachaca/pagina6.jpg',
+'./ouroecachaca/pagina7.jpg',
+'./ouroecachaca/pagina8.jpg',
+'./ouroecachaca/pagina9.jpg',
+'./ouroecachaca/pagina10.jpg',
+'./ouroecachaca/pagina11.jpg',
+'./ouroecachaca/pagina12.jpg'
 ];
 
 const imagensthebunker = [
-'/~mlpp/the-bunker/pagina (1).jpg',
-'/~mlpp/the-bunker/pagina (2).jpg',
-'/~mlpp/the-bunker/pagina (3).jpg',
-'/~mlpp/the-bunker/pagina (4).jpg',
-'/~mlpp/the-bunker/pagina (5).jpg',
-'/~mlpp/the-bunker/pagina (6).jpg',
-'/~mlpp/the-bunker/pagina (7).jpg',
-'/~mlpp/the-bunker/pagina (8).jpg',
-'/~mlpp/the-bunker/pagina (9).jpg',
-'/~mlpp/the-bunker/pagina (10).jpg'
+'./the-bunker/pagina (1).jpg',
+'./the-bunker/pagina (2).jpg',
+'./the-bunker/pagina (3).jpg',
+'./the-bunker/pagina (4).jpg',
+'./the-bunker/pagina (5).jpg',
+'./the-bunker/pagina (6).jpg',
+'./the-bunker/pagina (7).jpg',
+'./the-bunker/pagina (8).jpg',
+'./the-bunker/pagina (9).jpg',
+'./the-bunker/pagina (10).jpg'
 ];
 
 return (
     <>
 
         <div className="pagina-sobre">
-            <main>
+            <div className="projects-content">
                 <article className="portfolio-artigo">
                 <header>
-                    <h1>Produções</h1>
+                    <p className="eyebrow">02 / IDEIAS EM PRÁTICA</p><h1>Projetos com <em>propósito.</em></h1>
                 </header>
                 <section>
                     <p>
@@ -99,8 +100,8 @@ return (
                 </article>
 
                 <article>
-                <h1>Mapeia</h1>
-                <Carrossel imagens={imagensmapeia} />
+                <div className="project-heading"><span className="project-number">01</span><div><p className="eyebrow">GOVTECH / UX / IMPACTO SOCIAL</p><h2>Mapeia</h2></div><span aria-hidden="true">→</span></div>
+                <Carrossel imagens={imagensmapeia} titulo="Mapeia" />
                 <p>
                     Desenvolvido como projeto da disciplina de Concepção de Artefatos digitais, o Mapeia é uma plataforma GovTech baseada em um mapa colaborativo que funciona como um sensor territorial em tempo real. Conecta o monitoramento de field via crowdsourcing (realizado por cidadãos e movimentos sociais de base) à inteligência de dados públicos para identificar e georreferenciar casarões históricos ociosos e degradados no Centro do Recife.
                 </p>
@@ -116,8 +117,8 @@ return (
                 </article>
 
                 <article>
-                <h1>Ouro e Cachaça</h1>
-                <Carrossel imagens={imagensouroecachaca} />
+                <div className="project-heading"><span className="project-number">02</span><div><p className="eyebrow">PYTHON / PYGAME / GAME DESIGN</p><h2>Ouro e Cachaça</h2></div><span aria-hidden="true">→</span></div>
+                <Carrossel imagens={imagensouroecachaca} titulo="Ouro e Cachaça" />
                 <p>
                     Desenvolvido como projeto da disciplina Introdução à Programação com o objetivo de botar em prática os conhecimentos aprendidos em sala, sendo desenvolvido inteiramente em Python, utilizando a biblioteca Pygame. O jogo mistura os gêneros de TCG, roguelike deckbuilder e terror psicológico para apresentar o lado sombrio do folclore brasileiro.
                 </p>
@@ -132,8 +133,8 @@ return (
                 
 
                 <article>
-                <h1>The Bunker</h1>
-                <Carrossel imagens={imagensthebunker} />
+                <div className="project-heading"><span className="project-number">03</span><div><p className="eyebrow">JOGOS / TERROR / EXPERIÊNCIA 2D</p><h2>The Bunker</h2></div><span aria-hidden="true">→</span></div>
+                <Carrossel imagens={imagensthebunker} titulo="The Bunker" />
                 <p>
                     Desenvolvido para o processo seletivo da Liga Acadêmica de Jogos Eletrônicos (LAJE), The Bunker é uma experiência 2D single-player de terror psicológico e stealth. Na pele do personagem Damião, o jogador tem o objetivo de escapar de uma clínica macabra e conter o ritual de uma seita obscura. Através de uma interface 2D focada na exploração de cenários, o protótipo permite ao jogador coletar registros para desvendar a história, encontrar rotas de fuga e improvisar recursos e armas com itens do ambiente para sobreviver às ameaças.
                 </p>
@@ -144,7 +145,7 @@ return (
                     </a>
                 </p>
                 </article>
-            </main>
+            </div>
         </div>
     </>
     );

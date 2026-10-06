@@ -1,16 +1,28 @@
-# React + Vite
+# MLPP · Portfólio pessoal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site React + Vite no estilo Editorial Tropical Tech, com páginas HTML separadas (MPA):
 
-Currently, two official plugins are available:
+- `index.html`: Home editorial e apresentação.
+- `sobre.html`: trajetória, experiências e soft skills.
+- `projetos.html`: Mapeia, Ouro e Cachaça e The Bunker, com galerias independentes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Desenvolvimento
 
-## React Compiler
+Use Node.js 24. Execute nesta pasta:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```sh
+npm ci
+npm run dev
+```
 
-## Expanding the ESLint configuration
+A navegação usa links HTML reais. O tema claro/escuro segue a preferência do sistema no primeiro acesso e salva a escolha em localStorage. As galerias mantêm navegação circular e permitem usar botões, indicadores e as setas do teclado quando o foco está na galeria.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Validação e publicação
+
+```sh
+npm run lint
+npm run build
+npm run preview
+```
+
+Publique **todo o conteúdo de `dist/`**, incluindo os três arquivos HTML e as pastas de imagens. Os caminhos relativos permitem publicação na raiz ou em um subdiretório, como `/~mlpp/`. Não é necessário configurar fallback de SPA: cada página possui seu próprio HTML.

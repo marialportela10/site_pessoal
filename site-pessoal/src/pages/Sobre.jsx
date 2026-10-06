@@ -1,11 +1,11 @@
-export default function Sobre({ setPaginaAtual, alternarTema }) {
+export default function Sobre() {
     return (
         <>
-            <div class="pagina-sobre">
-                <main>
-                    <article class="sobre-artigo">
+            <div className="pagina-sobre">
+                <div className="about-content">
+                    <article className="sobre-artigo">
                         <header> 
-                            <h1>Sobre mim</h1>
+                            <p className="eyebrow">01 / TRAJETÓRIA & INTERESSES</p><h1>Além do <em>código.</em></h1>
                         </header>
                         <section>
                             <p>Olá! Meu nome é Maria Luiza de Paula Portela, sou Graduanda em Sistemas de Informação pela Universidade Federal de Pernambuco (UFPE), com interesse na área de Gestão de Projetos e Produtos de Tecnologia (Product Management) e na área de cibersegurança.
@@ -25,36 +25,37 @@ export default function Sobre({ setPaginaAtual, alternarTema }) {
                                 <p>Atuo como desenvolvedora e game designer, vivenciando na prática o ciclo de vida de um produto digital, o trabalho multidisciplinar e o foco na experiência do usuário (UX).
         </p>
                         </section>
-                        <div class="linha-secoes">
+                        <div className="linha-secoes">
                             <aside>
                                 <section>
                                     <h2>Linguagens</h2>
-                                        <ul class="badge-lista">
-                                            <li class="badge">Python</li>
-                                            <li class="badge">C</li>
-                                            <li class="badge">C++</li>
-                                            <li class="badge">JavaScript</li>
-                                            <li class="badge">HTML</li>
-                                            <li class="badge">CSS</li>
+                                        <ul className="badge-lista">
+                                            <li className="badge">Python</li>
+                                            <li className="badge">C</li>
+                                            <li className="badge">C++</li>
+                                            <li className="badge">JavaScript</li>
+                                            <li className="badge">HTML</li>
+                                            <li className="badge">CSS</li>
                                         </ul>
                                 </section>
                             </aside>
                             <section>
                                 <h2>Interesses e Estudos</h2>
-                                <ul class="badge-lista">
-                                    <li class="badge">Gestão de Projetos e Produtos de Tecnologia (Product Management)</li>
-                                    <li class="badge">Cibersegurança</li>
-                                    <li class="badge">Desenvolvimento Web</li>
-                                    <li class="badge">Desenvolvimento de Jogos Digitais</li>
+                                <ul className="badge-lista">
+                                    <li className="badge">Gestão de Projetos e Produtos de Tecnologia (Product Management)</li>
+                                    <li className="badge">Cibersegurança</li>
+                                    <li className="badge">Desenvolvimento Web</li>
+                                    <li className="badge">Desenvolvimento de Jogos Digitais</li>
                                 </ul>
                             </section>
                         </div>
+                        <section className="soft-skills"><p className="eyebrow">COMO EU TRABALHO</p><h2>Soft skills, <em>conexões reais.</em></h2><div className="skills-grid"><article><span>01 /</span><h3>Comunicação clara</h3><p>Traduzir conceitos de programação para quem está começando.</p></article><article><span>02 /</span><h3>Escuta ativa</h3><p>Entender dúvidas, acolher perspectivas e aprender com a troca.</p></article><article><span>03 /</span><h3>Liderança facilitadora</h3><p>Apoiar estudantes e construir soluções em conjunto.</p></article><article><span>04 /</span><h3>Colaboração criativa</h3><p>Conectar desenvolvimento, game design e experiência do usuário.</p></article></div></section>
                         <section>
                             <p>Estou sempre aberta a conversas, trocas de experiências sobre tecnologia, produto e games, além de oportunidades de estágio nas áreas de Gestão de Projetos e Product Management e Cibersegurança.
         </p>
                         </section>
                     </article>
-                </main>
+                </div>
 
             </div>
         </>
